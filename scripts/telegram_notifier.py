@@ -63,10 +63,11 @@ def format_report(payload: dict) -> str:
 
 
 def send_telegram(message: str) -> bool:
-    token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    # 기존 레포 컨벤션: TELEGRAM_TOKEN (또는 BOT_TOKEN 호환)
+    token = os.environ.get("TELEGRAM_TOKEN") or os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
-        log.error("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID")
+        log.error("Missing TELEGRAM_TOKEN or TELEGRAM_CHAT_ID")
         return False
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
