@@ -1,0 +1,36 @@
+{
+  "date": "2026-04-16",
+  "scanned_at": "2026-05-03T03:39:39.057531",
+  "source": "seed",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "OCI홀딩스",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.0,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "에너지",
+      "color": "#D32F2F",
+      "text_color": "#FFFFFF"
+    },
+    {
+      "ticker": "",
+      "name": "두산에너빌리티",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.5,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "에너지",
+      "color": "#D32F2F",
+      "text_color": "#FFFFFF"
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}

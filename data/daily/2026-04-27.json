@@ -1,0 +1,60 @@
+{
+  "date": "2026-04-27",
+  "scanned_at": "2026-05-03T03:39:39.058085",
+  "source": "seed",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "SK하이닉스",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.0,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "반도체",
+      "color": "#E53935",
+      "text_color": "#FFFFFF"
+    },
+    {
+      "ticker": "",
+      "name": "한미반도체",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.5,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "반도체",
+      "color": "#E53935",
+      "text_color": "#FFFFFF"
+    },
+    {
+      "ticker": "",
+      "name": "LSE",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 6.0,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "전력기기",
+      "color": "#C62828",
+      "text_color": "#FFFFFF"
+    },
+    {
+      "ticker": "",
+      "name": "로보티즈",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 6.5,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "로봇",
+      "color": "#1E88E5",
+      "text_color": "#FFFFFF"
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}

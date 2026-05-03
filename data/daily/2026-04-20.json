@@ -1,0 +1,36 @@
+{
+  "date": "2026-04-20",
+  "scanned_at": "2026-05-03T03:39:39.057666",
+  "source": "seed",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "SDI",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.0,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "2차전지",
+      "color": "#1A237E",
+      "text_color": "#FFFFFF"
+    },
+    {
+      "ticker": "",
+      "name": "주성엔지니어링",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.5,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "반도체",
+      "color": "#E53935",
+      "text_color": "#FFFFFF"
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-28",
+  "scanned_at": "2026-05-03T03:39:39.058166",
+  "source": "seed",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "포스코홀딩스",
+      "market": "KOSPI",
+      "close": 0,
+      "change_rate": 5.0,
+      "trading_value": 0,
+      "market_cap": 0,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000"
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}

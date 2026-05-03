@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>주도주 캘린더 | Leading Stocks</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Pretendard',
+                 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+  }
+  .grid-cell { min-height: 90px; border: 1px solid #d1d5db; padding: 4px; }
+  .grid-cell-header { background: #e5e7eb; font-weight: 600; text-align: center; font-size: 13px; padding: 4px 0; }
+  .stock-tag {
+    display: block;
+    padding: 3px 6px;
+    margin: 2px 0;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 2px;
+  }
+  .sector-counter {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 6px 4px; font-size: 12px; font-weight: 600;
+    color: #fff; min-height: 50px; justify-content: center;
+  }
+  .sector-count-num { font-size: 20px; font-weight: 800; }
+  .empty-cell { color: #9ca3af; font-size: 11px; text-align: center; padding-top: 30px; }
+  .week-rank-cell { background: #f3f4f6; font-size: 11px; padding: 6px 4px; }
+  .month-title { color: #4ade80; font-weight: 700; font-size: 18px; }
+</style>
+</head>
+<body>
+<div class="max-w-screen-2xl mx-auto px-4 py-6">
+
+  <!-- 헤더 -->
+  <header class="mb-6 flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold">주도주 캘린더</h1>
+      <p class="text-sm text-gray-600 mt-1" id="subtitle">로딩 중...</p>
+    </div>
+    <div class="flex gap-2">
+      <button id="prev-month" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">◀ 이전</button>
+      <select id="month-select" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm"></select>
+      <button id="next-month" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">다음 ▶</button>
+    </div>
+  </header>
+
+  <!-- 메인 그리드 -->
+  <div class="bg-white rounded-lg border border-gray-300 overflow-hidden">
+    <!-- 월 타이틀 바 -->
+    <div class="border-b border-gray-300 py-2 px-4 flex items-center justify-center">
+      <span class="month-title" id="month-title">로딩 중...</span>
+    </div>
+
+    <!-- 캘린더 + 사이드 위젯 -->
+    <div class="grid" style="grid-template-columns: 1fr 200px;">
+      <!-- 캘린더 본문 -->
+      <div id="calendar-grid" class="grid"
+           style="grid-template-columns: repeat(5, 1fr) 90px;">
+        <!-- 동적 채움 -->
+      </div>
+
+      <!-- 우측 섹터 위젯 -->
+      <aside class="border-l border-gray-300 p-3 bg-gray-50">
+        <h3 class="text-sm font-semibold text-gray-700 mb-3">월간 섹터 카운트</h3>
+        <div id="sector-counters" class="grid grid-cols-3 gap-1">
+          <!-- 동적 채움 -->
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="mt-6 text-xs text-gray-500 text-center">
+    <p id="meta">Updated: -</p>
+    <p class="mt-1">
+      Source: KRX 정보데이터시스템 (pykrx) + 네이버금융 |
+      <a href="https://github.com/jinhae8971/leading-stocks-calendar" class="underline hover:text-gray-700">GitHub</a>
+    </p>
+  </footer>
+</div>
+
+<script>
+const DATA_PATH = './data';
+
+// 섹터 색상 (sector_map.yaml과 동일)
+const SECTOR_COLORS = {
+  '반도체':     { color: '#E53935', text: '#FFFFFF' },
+  '전력기기':   { color: '#C62828', text: '#FFFFFF' },
+  '조선':       { color: '#F57C00', text: '#FFFFFF' },
+  '로봇':       { color: '#1E88E5', text: '#FFFFFF' },
+  '에너지':     { color: '#D32F2F', text: '#FFFFFF' },
+  '기타':       { color: '#FFEB3B', text: '#000000' },
+  '2차전지':    { color: '#1A237E', text: '#FFFFFF' },
+  '개별주':     { color: '#43A047', text: '#FFFFFF' },
+  '금융지주':   { color: '#9E9E9E', text: '#FFFFFF' },
+  '바이오':     { color: '#EC407A', text: '#FFFFFF' },
+  '엔터·소비':  { color: '#9CCC65', text: '#000000' },
+  '우주방산':   { color: '#757575', text: '#FFFFFF' },
+};
+
+let currentYear, currentMonth;
+
+async function loadMonth(year, month) {
+  const path = `${DATA_PATH}/monthly/${year}-${String(month).padStart(2,'0')}.json`;
+  try {
+    const resp = await fetch(path);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return await resp.json();
+  } catch (e) {
+    console.warn(`Failed to load ${path}:`, e);
+    return null;
+  }
+}
+
+function renderCalendar(data) {
+  const grid = document.getElementById('calendar-grid');
+  grid.innerHTML = '';
+
+  // 헤더 행
+  ['월', '화', '수', '목', '금', '주간순위'].forEach(label => {
+    const cell = document.createElement('div');
+    cell.className = 'grid-cell-header';
+    cell.textContent = label;
+    grid.appendChild(cell);
+  });
+
+  if (!data) {
+    const msg = document.createElement('div');
+    msg.className = 'col-span-6 p-8 text-center text-gray-500';
+    msg.textContent = '해당 월 데이터가 아직 없습니다. 영업일이 지나면 자동 생성됩니다.';
+    grid.appendChild(msg);
+    return;
+  }
+
+  // 주차별 행
+  data.weeks.forEach((week, wIdx) => {
+    week.days.forEach(day => {
+      const cell = document.createElement('div');
+      cell.className = 'grid-cell';
+
+      if (!day.in_month) {
+        cell.style.background = '#fafafa';
+        cell.innerHTML = `<div class="text-gray-400 text-xs text-center">${day.day}</div>`;
+      } else {
+        let html = `<div class="text-xs text-gray-600 text-center mb-1">${day.day}</div>`;
+        if (day.empty_label) {
+          html += `<div class="empty-cell">${day.empty_label}</div>`;
+        } else if (day.leaders && day.leaders.length > 0) {
+          day.leaders.forEach(ld => {
+            const sc = SECTOR_COLORS[ld.sector] || { color: '#FFEB3B', text: '#000' };
+            html += `
+              <span class="stock-tag"
+                    style="background:${sc.color}; color:${sc.text};"
+                    title="${ld.sector} | +${ld.change_rate}%">
+                ${ld.name}
+              </span>`;
+          });
+        }
+        cell.innerHTML = html;
+      }
+      grid.appendChild(cell);
+    });
+
+    // 주간 순위 컬럼
+    const rankCell = document.createElement('div');
+    rankCell.className = 'grid-cell week-rank-cell';
+    const weekRank = data.weekly_sector_counts[wIdx];
+    if (weekRank && weekRank.ranking.length > 0) {
+      const lines = weekRank.ranking.slice(0, 5).map(r => {
+        const sc = SECTOR_COLORS[r.sector] || { color: '#888', text: '#fff' };
+        return `<div style="color:${sc.color}; font-weight:700;">
+                  ${r.sector} <span style="color:#333">${r.count}</span>
+                </div>`;
+      }).join('');
+      rankCell.innerHTML = lines;
+    } else {
+      rankCell.innerHTML = '<div class="text-gray-400 text-xs">-</div>';
+    }
+    grid.appendChild(rankCell);
+  });
+}
+
+function renderSectorCounters(data) {
+  const container = document.getElementById('sector-counters');
+  container.innerHTML = '';
+
+  if (!data || !data.monthly_sector_counts) {
+    container.innerHTML = '<div class="col-span-3 text-xs text-gray-400 text-center">-</div>';
+    return;
+  }
+
+  // 모든 정의된 섹터 표시 (count=0도 표시)
+  const allSectors = Object.keys(SECTOR_COLORS);
+  const countMap = {};
+  data.monthly_sector_counts.forEach(s => { countMap[s.sector] = s.count; });
+
+  allSectors.forEach(sector => {
+    const sc = SECTOR_COLORS[sector];
+    const count = countMap[sector] || 0;
+    const div = document.createElement('div');
+    div.className = 'sector-counter';
+    div.style.background = sc.color;
+    div.style.color = sc.text;
+    div.innerHTML = `
+      <div style="font-size:10px;">${sector}</div>
+      <div class="sector-count-num">${count}</div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function updateMonthSelect() {
+  const select = document.getElementById('month-select');
+  select.innerHTML = '';
+  // 최근 12개월
+  const today = new Date();
+  for (let i = 0; i < 12; i++) {
+    const d = new Date(today.getFullYear(), today.getMonth() - i, 1);
+    const opt = document.createElement('option');
+    opt.value = `${d.getFullYear()}-${d.getMonth() + 1}`;
+    opt.textContent = `${d.getFullYear()}년 ${d.getMonth() + 1}월`;
+    if (d.getFullYear() === currentYear && d.getMonth() + 1 === currentMonth) {
+      opt.selected = true;
+    }
+    select.appendChild(opt);
+  }
+}
+
+async function refresh() {
+  const data = await loadMonth(currentYear, currentMonth);
+  document.getElementById('month-title').textContent =
+    `${currentMonth}월 주도주 캘린더`;
+  document.getElementById('subtitle').textContent =
+    `${currentYear}년 ${currentMonth}월 한국 시장 일별 주도 종목 추적`;
+
+  renderCalendar(data);
+  renderSectorCounters(data);
+
+  document.getElementById('meta').textContent = data
+    ? `Updated: ${new Date(data.generated_at).toLocaleString('ko-KR')}`
+    : 'No data yet';
+}
+
+// 이벤트 핸들러
+document.getElementById('prev-month').onclick = () => {
+  currentMonth--;
+  if (currentMonth < 1) { currentMonth = 12; currentYear--; }
+  updateMonthSelect();
+  refresh();
+};
+document.getElementById('next-month').onclick = () => {
+  currentMonth++;
+  if (currentMonth > 12) { currentMonth = 1; currentYear++; }
+  updateMonthSelect();
+  refresh();
+};
+document.getElementById('month-select').onchange = (e) => {
+  const [y, m] = e.target.value.split('-').map(Number);
+  currentYear = y; currentMonth = m;
+  refresh();
+};
+
+// 초기화
+const today = new Date();
+currentYear = today.getFullYear();
+currentMonth = today.getMonth() + 1;
+updateMonthSelect();
+refresh();
+</script>
+</body>
+</html>
