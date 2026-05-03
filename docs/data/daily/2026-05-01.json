@@ -1,6 +1,6 @@
 {
   "date": "2026-05-01",
-  "scanned_at": "2026-05-03T04:16:55.942491",
+  "scanned_at": "2026-05-03T04:26:44.949938",
   "source": "naver",
   "leaders": [
     {
@@ -13,7 +13,14 @@
       "market_cap": 396500000000,
       "sector": "로봇",
       "color": "#1E88E5",
-      "text_color": "#FFFFFF"
+      "text_color": "#FFFFFF",
+      "signal_score": 76.7,
+      "signal_breakdown": {
+        "change_rate": 100.0,
+        "trading_value": 89.0,
+        "sector_sync": 0,
+        "turnover": 100
+      }
     },
     {
       "ticker": "",
@@ -25,7 +32,14 @@
       "market_cap": 396300000000,
       "sector": "바이오",
       "color": "#EC407A",
-      "text_color": "#FFFFFF"
+      "text_color": "#FFFFFF",
+      "signal_score": 74.3,
+      "signal_breakdown": {
+        "change_rate": 99.7,
+        "trading_value": 87.0,
+        "sector_sync": 0,
+        "turnover": 83.5
+      }
     },
     {
       "ticker": "",
@@ -37,7 +51,14 @@
       "market_cap": 583200000000,
       "sector": "화학·소재",
       "color": "#FB8C00",
-      "text_color": "#FFFFFF"
+      "text_color": "#FFFFFF",
+      "signal_score": 71.6,
+      "signal_breakdown": {
+        "change_rate": 81.2,
+        "trading_value": 97.0,
+        "sector_sync": 0,
+        "turnover": 100
+      }
     },
     {
       "ticker": "",
@@ -49,43 +70,14 @@
       "market_cap": 8143800000000,
       "sector": "전력기기",
       "color": "#C62828",
-      "text_color": "#FFFFFF"
-    },
-    {
-      "ticker": "",
-      "name": "삼성 레버리지 WTI원유 선물 ETN",
-      "market": "KOSPI",
-      "close": 4180.0,
-      "change_rate": 19.94,
-      "trading_value": 16217480400,
-      "market_cap": 1688700000000,
-      "sector": "ETF·ETN",
-      "color": "#90A4AE",
-      "text_color": "#FFFFFF"
-    },
-    {
-      "ticker": "",
-      "name": "재영솔루텍",
-      "market": "KOSDAQ",
-      "close": 17100.0,
-      "change_rate": 16.72,
-      "trading_value": 41974429500,
-      "market_cap": 399800000000,
-      "sector": "기타",
-      "color": "#FFEB3B",
-      "text_color": "#000000"
-    },
-    {
-      "ticker": "",
-      "name": "서울반도체",
-      "market": "KOSDAQ",
-      "close": 16510.0,
-      "change_rate": 15.29,
-      "trading_value": 235091618970,
-      "market_cap": 962600000000,
-      "sector": "반도체",
-      "color": "#E53935",
-      "text_color": "#FFFFFF"
+      "text_color": "#FFFFFF",
+      "signal_score": 71.5,
+      "signal_breakdown": {
+        "change_rate": 67.9,
+        "trading_value": 97.8,
+        "sector_sync": 33.3,
+        "turnover": 83.0
+      }
     },
     {
       "ticker": "",
@@ -97,7 +89,71 @@
       "market_cap": 1180100000000,
       "sector": "전력기기",
       "color": "#C62828",
-      "text_color": "#FFFFFF"
+      "text_color": "#FFFFFF",
+      "signal_score": 66.6,
+      "signal_breakdown": {
+        "change_rate": 49.9,
+        "trading_value": 100.0,
+        "sector_sync": 33.3,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "재영솔루텍",
+      "market": "KOSDAQ",
+      "close": 17100.0,
+      "change_rate": 16.72,
+      "trading_value": 41974429500,
+      "market_cap": 399800000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 58.6,
+      "signal_breakdown": {
+        "change_rate": 55.7,
+        "trading_value": 87.9,
+        "sector_sync": 0,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "서울반도체",
+      "market": "KOSDAQ",
+      "close": 16510.0,
+      "change_rate": 15.29,
+      "trading_value": 235091618970,
+      "market_cap": 962600000000,
+      "sector": "반도체",
+      "color": "#E53935",
+      "text_color": "#FFFFFF",
+      "signal_score": 58.6,
+      "signal_breakdown": {
+        "change_rate": 51.0,
+        "trading_value": 94.0,
+        "sector_sync": 0,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "삼성 레버리지 WTI원유 선물 ETN",
+      "market": "KOSPI",
+      "close": 4180.0,
+      "change_rate": 19.94,
+      "trading_value": 16217480400,
+      "market_cap": 1688700000000,
+      "sector": "ETF·ETN",
+      "color": "#90A4AE",
+      "text_color": "#FFFFFF",
+      "signal_score": 52.9,
+      "signal_breakdown": {
+        "change_rate": 66.5,
+        "trading_value": 84.4,
+        "sector_sync": 0,
+        "turnover": 9.6
+      }
     }
   ],
   "params": {
