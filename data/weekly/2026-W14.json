@@ -1,0 +1,111 @@
+{
+  "year": 2026,
+  "week": 14,
+  "iso_label": "2026-W14",
+  "date_range": {
+    "start": "2026-03-30",
+    "end": "2026-04-03"
+  },
+  "generated_at": "2026-05-03T04:24:58.836136",
+  "top_sectors": [
+    {
+      "sector": "기타",
+      "count": 2
+    },
+    {
+      "sector": "에너지",
+      "count": 2
+    },
+    {
+      "sector": "우주방산",
+      "count": 1
+    }
+  ],
+  "top_stocks": [
+    {
+      "name": "대우건설",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "SK이터닉스",
+      "sector": "에너지",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "대한광통신",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "HD에너지솔루션",
+      "sector": "에너지",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "LIG넥스원",
+      "sector": "우주방산",
+      "appearances": 1,
+      "continuity_score": 0.2
+    }
+  ],
+  "daily_breakdown": [
+    {
+      "date": "2026-03-30",
+      "weekday": "Mon",
+      "leaders": []
+    },
+    {
+      "date": "2026-03-31",
+      "weekday": "Tue",
+      "leaders": []
+    },
+    {
+      "date": "2026-04-01",
+      "weekday": "Wed",
+      "leaders": [
+        {
+          "name": "대우건설",
+          "sector": "기타",
+          "change_rate": 5.0
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "weekday": "Thu",
+      "leaders": []
+    },
+    {
+      "date": "2026-04-03",
+      "weekday": "Fri",
+      "leaders": [
+        {
+          "name": "SK이터닉스",
+          "sector": "에너지",
+          "change_rate": 5.0
+        },
+        {
+          "name": "대한광통신",
+          "sector": "기타",
+          "change_rate": 5.5
+        },
+        {
+          "name": "HD에너지솔루션",
+          "sector": "에너지",
+          "change_rate": 6.0
+        },
+        {
+          "name": "LIG넥스원",
+          "sector": "우주방산",
+          "change_rate": 6.5
+        }
+      ]
+    }
+  ],
+  "narrative": "이번 주 주도 섹터는 **기타** (2회 등장)이며, 뒤를 이어 에너지(2회)이 동조 흐름을 보였습니다."
+}

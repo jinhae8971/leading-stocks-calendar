@@ -51,9 +51,12 @@ def format_report(payload: dict) -> str:
         lines.append(f"\n*【 {sector} 】* ({len(items)})")
         for ld in items:
             arrow = "🔺" if ld["change_rate"] > 0 else "🔻"
+            score_str = ""
+            if "signal_score" in ld:
+                score_str = f" ⚡{ld['signal_score']:.0f}"
             lines.append(
                 f"  {arrow} `{ld['name']}` "
-                f"+{ld['change_rate']:.2f}% "
+                f"+{ld['change_rate']:.2f}%{score_str} "
                 f"({ld['market']})"
             )
 

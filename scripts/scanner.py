@@ -331,8 +331,9 @@ def run(target_date: Optional[str] = None) -> dict:
             "text_color": text_color,
         })
 
-    # 정렬: 등락률 내림차순
-    leaders.sort(key=lambda x: x["change_rate"], reverse=True)
+    # 정렬: 시그널 점수 기준 (다차원)
+    from signal_strength import score_leaders
+    leaders = score_leaders(leaders)
 
     result = {
         "date": f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:8]}",

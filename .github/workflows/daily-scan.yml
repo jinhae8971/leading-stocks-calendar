@@ -48,6 +48,9 @@ jobs:
       - name: Build monthly calendar
         run: python scripts/calendar_builder.py
 
+      - name: Aggregate weekly summary
+        run: python scripts/weekly_aggregator.py
+
       - name: Mirror data to docs/
         run: python scripts/mirror_to_docs.py
 

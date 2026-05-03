@@ -1,0 +1,101 @@
+{
+  "year": 2026,
+  "week": 15,
+  "iso_label": "2026-W15",
+  "date_range": {
+    "start": "2026-04-06",
+    "end": "2026-04-10"
+  },
+  "generated_at": "2026-05-03T04:24:58.881057",
+  "top_sectors": [
+    {
+      "sector": "기타",
+      "count": 2
+    },
+    {
+      "sector": "로봇",
+      "count": 1
+    },
+    {
+      "sector": "전력기기",
+      "count": 1
+    }
+  ],
+  "top_stocks": [
+    {
+      "name": "대우건설",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "후성",
+      "sector": "로봇",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "대한광통신",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "삼성전기",
+      "sector": "전력기기",
+      "appearances": 1,
+      "continuity_score": 0.2
+    }
+  ],
+  "daily_breakdown": [
+    {
+      "date": "2026-04-06",
+      "weekday": "Mon",
+      "leaders": []
+    },
+    {
+      "date": "2026-04-07",
+      "weekday": "Tue",
+      "leaders": []
+    },
+    {
+      "date": "2026-04-08",
+      "weekday": "Wed",
+      "leaders": [
+        {
+          "name": "대우건설",
+          "sector": "기타",
+          "change_rate": 5.0
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "weekday": "Thu",
+      "leaders": [
+        {
+          "name": "후성",
+          "sector": "로봇",
+          "change_rate": 5.0
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "weekday": "Fri",
+      "leaders": [
+        {
+          "name": "대한광통신",
+          "sector": "기타",
+          "change_rate": 5.0
+        },
+        {
+          "name": "삼성전기",
+          "sector": "전력기기",
+          "change_rate": 5.5
+        }
+      ]
+    }
+  ],
+  "narrative": "이번 주 주도 섹터는 **기타** (2회 등장)이며, 뒤를 이어 로봇(1회)이 동조 흐름을 보였습니다."
+}

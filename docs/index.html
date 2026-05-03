@@ -12,8 +12,8 @@
     background: #f5f5f5;
     color: #1a1a1a;
   }
-  .grid-cell { min-height: 90px; border: 1px solid #d1d5db; padding: 4px; }
-  .grid-cell-header { background: #e5e7eb; font-weight: 600; text-align: center; font-size: 13px; padding: 4px 0; }
+  .grid-cell { min-height: 95px; border: 1px solid #d1d5db; padding: 4px; position: relative; }
+  .grid-cell-header { background: #e5e7eb; font-weight: 600; text-align: center; font-size: 13px; padding: 6px 0; }
   .stock-tag {
     display: block;
     padding: 3px 6px;
@@ -22,60 +22,69 @@
     font-weight: 600;
     text-align: center;
     border-radius: 2px;
+    cursor: help;
   }
+  .stock-tag:hover { filter: brightness(0.95); }
   .sector-counter {
-    display: flex; flex-direction: column; align-items: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 6px 4px; font-size: 12px; font-weight: 600;
-    color: #fff; min-height: 50px; justify-content: center;
+    color: #fff; min-height: 56px;
   }
   .sector-count-num { font-size: 20px; font-weight: 800; }
   .empty-cell { color: #9ca3af; font-size: 11px; text-align: center; padding-top: 30px; }
-  .week-rank-cell { background: #f3f4f6; font-size: 11px; padding: 6px 4px; }
+  .week-rank-cell { background: #f9fafb; font-size: 11px; padding: 6px 4px; }
   .month-title { color: #4ade80; font-weight: 700; font-size: 18px; }
+  .tab-btn { padding: 6px 14px; border-radius: 4px 4px 0 0; font-size: 13px;
+             border: 1px solid #d1d5db; border-bottom: none; cursor: pointer; }
+  .tab-btn.active { background: #fff; font-weight: 600; }
+  .tab-btn:not(.active) { background: #e5e7eb; color: #6b7280; }
+  .signal-bar { height: 4px; border-radius: 2px; background: #e5e7eb; overflow: hidden; }
+  .signal-fill { height: 100%; background: linear-gradient(90deg, #fbbf24, #ef4444); }
 </style>
 </head>
 <body>
 <div class="max-w-screen-2xl mx-auto px-4 py-6">
 
-  <!-- 헤더 -->
-  <header class="mb-6 flex items-center justify-between">
+  <header class="mb-4 flex items-center justify-between flex-wrap gap-3">
     <div>
       <h1 class="text-2xl font-bold">주도주 캘린더</h1>
       <p class="text-sm text-gray-600 mt-1" id="subtitle">로딩 중...</p>
     </div>
-    <div class="flex gap-2">
-      <button id="prev-month" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">◀ 이전</button>
+    <div class="flex gap-2 items-center">
+      <button id="prev-month" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">◀</button>
       <select id="month-select" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm"></select>
-      <button id="next-month" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">다음 ▶</button>
+      <button id="next-month" class="px-3 py-1.5 bg-white border border-gray-300 rounded text-sm hover:bg-gray-50">▶</button>
     </div>
   </header>
 
-  <!-- 메인 그리드 -->
-  <div class="bg-white rounded-lg border border-gray-300 overflow-hidden">
-    <!-- 월 타이틀 바 -->
+  <div class="flex gap-1 mb-0">
+    <button class="tab-btn active" data-tab="calendar">📅 캘린더</button>
+    <button class="tab-btn" data-tab="weekly">📊 주간 집계</button>
+    <button class="tab-btn" data-tab="signal">⚡ 시그널 강도</button>
+  </div>
+
+  <section id="tab-calendar" class="bg-white rounded-b-lg rounded-tr-lg border border-gray-300 overflow-hidden">
     <div class="border-b border-gray-300 py-2 px-4 flex items-center justify-center">
       <span class="month-title" id="month-title">로딩 중...</span>
     </div>
-
-    <!-- 캘린더 + 사이드 위젯 -->
     <div class="grid" style="grid-template-columns: 1fr 200px;">
-      <!-- 캘린더 본문 -->
       <div id="calendar-grid" class="grid"
-           style="grid-template-columns: repeat(5, 1fr) 90px;">
-        <!-- 동적 채움 -->
-      </div>
-
-      <!-- 우측 섹터 위젯 -->
+           style="grid-template-columns: repeat(5, 1fr) 90px;"></div>
       <aside class="border-l border-gray-300 p-3 bg-gray-50">
         <h3 class="text-sm font-semibold text-gray-700 mb-3">월간 섹터 카운트</h3>
-        <div id="sector-counters" class="grid grid-cols-3 gap-1">
-          <!-- 동적 채움 -->
-        </div>
+        <div id="sector-counters" class="grid grid-cols-3 gap-1"></div>
       </aside>
     </div>
-  </div>
+  </section>
 
-  <!-- 푸터 -->
+  <section id="tab-weekly" class="hidden bg-white rounded-b-lg rounded-tr-lg border border-gray-300 p-4">
+    <div id="weekly-content">로딩 중...</div>
+  </section>
+
+  <section id="tab-signal" class="hidden bg-white rounded-b-lg rounded-tr-lg border border-gray-300 p-4">
+    <div id="signal-content">로딩 중...</div>
+  </section>
+
   <footer class="mt-6 text-xs text-gray-500 text-center">
     <p id="meta">Updated: -</p>
     <p class="mt-1">
@@ -88,7 +97,6 @@
 <script>
 const DATA_PATH = './data';
 
-// 섹터 색상 (sector_map.yaml과 동일)
 const SECTOR_COLORS = {
   '반도체':     { color: '#E53935', text: '#FFFFFF' },
   '전력기기':   { color: '#C62828', text: '#FFFFFF' },
@@ -107,24 +115,19 @@ const SECTOR_COLORS = {
 };
 
 let currentYear, currentMonth;
+let monthlyData = null;
 
+async function fetchJSON(path) {
+  try { const r = await fetch(path); if (!r.ok) return null; return await r.json(); }
+  catch (e) { return null; }
+}
 async function loadMonth(year, month) {
-  const path = `${DATA_PATH}/monthly/${year}-${String(month).padStart(2,'0')}.json`;
-  try {
-    const resp = await fetch(path);
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    return await resp.json();
-  } catch (e) {
-    console.warn(`Failed to load ${path}:`, e);
-    return null;
-  }
+  return fetchJSON(`${DATA_PATH}/monthly/${year}-${String(month).padStart(2,'0')}.json`);
 }
 
 function renderCalendar(data) {
   const grid = document.getElementById('calendar-grid');
   grid.innerHTML = '';
-
-  // 헤더 행
   ['월', '화', '수', '목', '금', '주간순위'].forEach(label => {
     const cell = document.createElement('div');
     cell.className = 'grid-cell-header';
@@ -134,18 +137,16 @@ function renderCalendar(data) {
 
   if (!data) {
     const msg = document.createElement('div');
-    msg.className = 'col-span-6 p-8 text-center text-gray-500';
+    msg.style.cssText = 'grid-column: span 6; padding: 32px; text-align: center; color: #9ca3af;';
     msg.textContent = '해당 월 데이터가 아직 없습니다. 영업일이 지나면 자동 생성됩니다.';
     grid.appendChild(msg);
     return;
   }
 
-  // 주차별 행
   data.weeks.forEach((week, wIdx) => {
     week.days.forEach(day => {
       const cell = document.createElement('div');
       cell.className = 'grid-cell';
-
       if (!day.in_month) {
         cell.style.background = '#fafafa';
         cell.innerHTML = `<div class="text-gray-400 text-xs text-center">${day.day}</div>`;
@@ -156,12 +157,12 @@ function renderCalendar(data) {
         } else if (day.leaders && day.leaders.length > 0) {
           day.leaders.forEach(ld => {
             const sc = SECTOR_COLORS[ld.sector] || { color: '#FFEB3B', text: '#000' };
-            html += `
-              <span class="stock-tag"
-                    style="background:${sc.color}; color:${sc.text};"
-                    title="${ld.sector} | +${ld.change_rate}%">
-                ${ld.name}
-              </span>`;
+            const score = ld.signal_score !== undefined ? ` · ⚡${ld.signal_score}` : '';
+            html += `<span class="stock-tag"
+                          style="background:${sc.color}; color:${sc.text};"
+                          title="${ld.sector} | +${ld.change_rate}%${score}">
+                       ${ld.name}
+                     </span>`;
           });
         }
         cell.innerHTML = html;
@@ -169,18 +170,16 @@ function renderCalendar(data) {
       grid.appendChild(cell);
     });
 
-    // 주간 순위 컬럼
     const rankCell = document.createElement('div');
     rankCell.className = 'grid-cell week-rank-cell';
     const weekRank = data.weekly_sector_counts[wIdx];
     if (weekRank && weekRank.ranking.length > 0) {
-      const lines = weekRank.ranking.slice(0, 5).map(r => {
+      rankCell.innerHTML = weekRank.ranking.slice(0, 5).map(r => {
         const sc = SECTOR_COLORS[r.sector] || { color: '#888', text: '#fff' };
         return `<div style="color:${sc.color}; font-weight:700;">
                   ${r.sector} <span style="color:#333">${r.count}</span>
                 </div>`;
       }).join('');
-      rankCell.innerHTML = lines;
     } else {
       rankCell.innerHTML = '<div class="text-gray-400 text-xs">-</div>';
     }
@@ -191,36 +190,183 @@ function renderCalendar(data) {
 function renderSectorCounters(data) {
   const container = document.getElementById('sector-counters');
   container.innerHTML = '';
-
   if (!data || !data.monthly_sector_counts) {
     container.innerHTML = '<div class="col-span-3 text-xs text-gray-400 text-center">-</div>';
     return;
   }
-
-  // 모든 정의된 섹터 표시 (count=0도 표시)
-  const allSectors = Object.keys(SECTOR_COLORS);
   const countMap = {};
   data.monthly_sector_counts.forEach(s => { countMap[s.sector] = s.count; });
-
-  allSectors.forEach(sector => {
+  Object.keys(SECTOR_COLORS).forEach(sector => {
     const sc = SECTOR_COLORS[sector];
     const count = countMap[sector] || 0;
     const div = document.createElement('div');
     div.className = 'sector-counter';
     div.style.background = sc.color;
     div.style.color = sc.text;
-    div.innerHTML = `
-      <div style="font-size:10px;">${sector}</div>
-      <div class="sector-count-num">${count}</div>
-    `;
+    div.innerHTML = `<div style="font-size:10px;">${sector}</div>
+                     <div class="sector-count-num">${count}</div>`;
     container.appendChild(div);
   });
 }
 
+async function renderWeekly() {
+  const container = document.getElementById('weekly-content');
+  const weeks = [];
+  for (let w = 1; w <= 53; w++) {
+    const data = await fetchJSON(`${DATA_PATH}/weekly/${currentYear}-W${String(w).padStart(2,'0')}.json`);
+    if (data) {
+      const startMonth = parseInt(data.date_range.start.split('-')[1]);
+      const endMonth = parseInt(data.date_range.end.split('-')[1]);
+      if (startMonth === currentMonth || endMonth === currentMonth) weeks.push(data);
+    }
+  }
+  if (weeks.length === 0) {
+    container.innerHTML = '<p class="text-gray-500 text-sm">주간 집계 데이터가 아직 없습니다. 매주 금요일 자동 생성됩니다.</p>';
+    return;
+  }
+
+  const cards = weeks.map(wk => {
+    const sectors = wk.top_sectors.slice(0, 5).map(s => {
+      const sc = SECTOR_COLORS[s.sector] || { color: '#888', text: '#fff' };
+      const pct = (s.count / wk.top_sectors[0].count) * 100;
+      return `<div class="flex items-center gap-2 text-sm py-1">
+                <span class="px-2 py-0.5 rounded font-medium"
+                      style="background:${sc.color}; color:${sc.text}; min-width:80px; text-align:center; font-size:11px;">
+                  ${s.sector}
+                </span>
+                <div class="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+                  <div class="h-full rounded-full" style="width:${pct}%; background:${sc.color};"></div>
+                </div>
+                <span class="text-gray-700 font-semibold w-8 text-right">${s.count}</span>
+              </div>`;
+    }).join('');
+
+    const stocks = wk.top_stocks.slice(0, 5).map(s => {
+      const sc = SECTOR_COLORS[s.sector] || { color: '#888', text: '#fff' };
+      return `<div class="flex items-center gap-2 text-xs py-1 border-b border-gray-100 last:border-0">
+                <span class="font-medium flex-1">${s.name}</span>
+                <span class="px-1.5 py-0.5 rounded" style="background:${sc.color}; color:${sc.text}; font-size:10px;">
+                  ${s.sector}
+                </span>
+                <span class="text-gray-600">${s.appearances}회</span>
+                <span class="text-blue-600 font-semibold">${(s.continuity_score * 100).toFixed(0)}%</span>
+              </div>`;
+    }).join('');
+
+    return `<div class="border border-gray-200 rounded-lg p-4">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="font-bold text-base">${wk.iso_label}</h3>
+                <span class="text-xs text-gray-500">${wk.date_range.start} ~ ${wk.date_range.end}</span>
+              </div>
+              <p class="text-sm text-gray-700 mb-3 leading-relaxed">${wk.narrative || ''}</p>
+              <div class="mb-3">
+                <h4 class="text-xs font-semibold text-gray-500 mb-1">섹터 동조 톱 5</h4>
+                ${sectors}
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold text-gray-500 mb-1">연속 출현 톱 5 (Continuity)</h4>
+                ${stocks}
+              </div>
+            </div>`;
+  }).join('');
+
+  container.innerHTML = `<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">${cards}</div>`;
+}
+
+async function renderSignalRanking() {
+  const container = document.getElementById('signal-content');
+  if (!monthlyData) {
+    container.innerHTML = '<p class="text-gray-500 text-sm">데이터 없음</p>';
+    return;
+  }
+  const all = [];
+  monthlyData.weeks.forEach(w => {
+    w.days.forEach(d => {
+      d.leaders.forEach(l => {
+        if (l.signal_score !== undefined) all.push({ ...l, date: d.date });
+      });
+    });
+  });
+  if (all.length === 0) {
+    container.innerHTML = `<p class="text-gray-500 text-sm">
+      시그널 점수가 계산된 데이터가 아직 없습니다.
+      signal_strength 모듈은 다음 스캔부터 자동 적용됩니다.
+    </p>`;
+    return;
+  }
+  all.sort((a, b) => b.signal_score - a.signal_score);
+  const top = all.slice(0, 30);
+
+  const rows = top.map((l, i) => {
+    const sc = SECTOR_COLORS[l.sector] || { color: '#888', text: '#fff' };
+    const b = l.signal_breakdown || {};
+    return `<tr class="border-b border-gray-100 hover:bg-gray-50">
+              <td class="px-2 py-1.5 text-gray-500 text-xs">${i + 1}</td>
+              <td class="px-2 py-1.5 text-xs text-gray-600">${l.date}</td>
+              <td class="px-2 py-1.5 text-sm font-medium">${l.name}</td>
+              <td class="px-2 py-1.5">
+                <span class="px-1.5 py-0.5 rounded text-xs"
+                      style="background:${sc.color}; color:${sc.text};">
+                  ${l.sector}
+                </span>
+              </td>
+              <td class="px-2 py-1.5 text-sm text-right font-semibold text-red-600">+${l.change_rate.toFixed(2)}%</td>
+              <td class="px-2 py-1.5 w-32">
+                <div class="flex items-center gap-1">
+                  <div class="signal-bar flex-1">
+                    <div class="signal-fill" style="width:${l.signal_score}%"></div>
+                  </div>
+                  <span class="text-xs font-bold w-8 text-right">${l.signal_score}</span>
+                </div>
+              </td>
+              <td class="px-2 py-1.5 text-xs text-gray-500">
+                rate ${b.change_rate?.toFixed(0) ?? '-'} ·
+                val ${b.trading_value?.toFixed(0) ?? '-'} ·
+                sync ${b.sector_sync?.toFixed(0) ?? '-'} ·
+                turn ${b.turnover?.toFixed(0) ?? '-'}
+              </td>
+            </tr>`;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="mb-3 text-xs text-gray-600 leading-relaxed">
+      <strong>시그널 강도</strong> = 등락률(40%) + 거래대금(30%) + 섹터동조(20%) + 회전율(10%)
+      → 0~100 정규화. 단순 등락률보다 과도한 일회성 급등을 걸러냅니다.
+    </div>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead class="bg-gray-100 text-xs">
+          <tr>
+            <th class="px-2 py-2 text-left">#</th>
+            <th class="px-2 py-2 text-left">날짜</th>
+            <th class="px-2 py-2 text-left">종목</th>
+            <th class="px-2 py-2 text-left">섹터</th>
+            <th class="px-2 py-2 text-right">등락률</th>
+            <th class="px-2 py-2 text-left">시그널</th>
+            <th class="px-2 py-2 text-left">분해</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    ['calendar', 'weekly', 'signal'].forEach(id => {
+      document.getElementById(`tab-${id}`).classList.add('hidden');
+    });
+    document.getElementById(`tab-${btn.dataset.tab}`).classList.remove('hidden');
+    if (btn.dataset.tab === 'weekly') renderWeekly();
+    else if (btn.dataset.tab === 'signal') renderSignalRanking();
+  };
+});
+
 function updateMonthSelect() {
   const select = document.getElementById('month-select');
   select.innerHTML = '';
-  // 최근 12개월
   const today = new Date();
   for (let i = 0; i < 12; i++) {
     const d = new Date(today.getFullYear(), today.getMonth() - i, 1);
@@ -235,32 +381,29 @@ function updateMonthSelect() {
 }
 
 async function refresh() {
-  const data = await loadMonth(currentYear, currentMonth);
-  document.getElementById('month-title').textContent =
-    `${currentMonth}월 주도주 캘린더`;
+  monthlyData = await loadMonth(currentYear, currentMonth);
+  document.getElementById('month-title').textContent = `${currentMonth}월 주도주 캘린더`;
   document.getElementById('subtitle').textContent =
     `${currentYear}년 ${currentMonth}월 한국 시장 일별 주도 종목 추적`;
-
-  renderCalendar(data);
-  renderSectorCounters(data);
-
-  document.getElementById('meta').textContent = data
-    ? `Updated: ${new Date(data.generated_at).toLocaleString('ko-KR')}`
+  renderCalendar(monthlyData);
+  renderSectorCounters(monthlyData);
+  document.getElementById('meta').textContent = monthlyData
+    ? `Updated: ${new Date(monthlyData.generated_at).toLocaleString('ko-KR')}`
     : 'No data yet';
+  const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+  if (activeTab === 'weekly') renderWeekly();
+  else if (activeTab === 'signal') renderSignalRanking();
 }
 
-// 이벤트 핸들러
 document.getElementById('prev-month').onclick = () => {
   currentMonth--;
   if (currentMonth < 1) { currentMonth = 12; currentYear--; }
-  updateMonthSelect();
-  refresh();
+  updateMonthSelect(); refresh();
 };
 document.getElementById('next-month').onclick = () => {
   currentMonth++;
   if (currentMonth > 12) { currentMonth = 1; currentYear++; }
-  updateMonthSelect();
-  refresh();
+  updateMonthSelect(); refresh();
 };
 document.getElementById('month-select').onchange = (e) => {
   const [y, m] = e.target.value.split('-').map(Number);
@@ -268,7 +411,6 @@ document.getElementById('month-select').onchange = (e) => {
   refresh();
 };
 
-// 초기화
 const today = new Date();
 currentYear = today.getFullYear();
 currentMonth = today.getMonth() + 1;
