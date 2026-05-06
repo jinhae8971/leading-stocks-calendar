@@ -6,19 +6,19 @@
     "start": "2026-05-04",
     "end": "2026-05-08"
   },
-  "generated_at": "2026-05-05T09:26:47.225372",
+  "generated_at": "2026-05-06T09:40:42.719523",
   "top_sectors": [
     {
       "sector": "기타",
-      "count": 8
+      "count": 14
     },
     {
       "sector": "전력기기",
-      "count": 4
+      "count": 5
     },
     {
       "sector": "금융지주",
-      "count": 2
+      "count": 3
     },
     {
       "sector": "바이오",
@@ -26,6 +26,12 @@
     }
   ],
   "top_stocks": [
+    {
+      "name": "가온전선",
+      "sector": "전력기기",
+      "appearances": 3,
+      "continuity_score": 0.6
+    },
     {
       "name": "제룡전기",
       "sector": "기타",
@@ -69,10 +75,16 @@
       "continuity_score": 0.4
     },
     {
-      "name": "가온전선",
-      "sector": "전력기기",
-      "appearances": 2,
-      "continuity_score": 0.4
+      "name": "드림시큐리티",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "파워넷",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
     }
   ],
   "daily_breakdown": [
@@ -171,7 +183,48 @@
     {
       "date": "2026-05-06",
       "weekday": "Wed",
-      "leaders": []
+      "leaders": [
+        {
+          "name": "드림시큐리티",
+          "sector": "기타",
+          "change_rate": 29.93
+        },
+        {
+          "name": "파워넷",
+          "sector": "기타",
+          "change_rate": 29.97
+        },
+        {
+          "name": "KBI메탈",
+          "sector": "기타",
+          "change_rate": 29.86
+        },
+        {
+          "name": "HB테크놀러지",
+          "sector": "기타",
+          "change_rate": 29.89
+        },
+        {
+          "name": "두산퓨얼셀",
+          "sector": "기타",
+          "change_rate": 29.21
+        },
+        {
+          "name": "SKC",
+          "sector": "기타",
+          "change_rate": 30.0
+        },
+        {
+          "name": "유안타증권",
+          "sector": "금융지주",
+          "change_rate": 29.85
+        },
+        {
+          "name": "가온전선",
+          "sector": "전력기기",
+          "change_rate": 27.21
+        }
+      ]
     },
     {
       "date": "2026-05-07",
@@ -184,5 +237,5 @@
       "leaders": []
     }
   ],
-  "narrative": "이번 주 주도 섹터는 **기타** (8회 등장)이며, 뒤를 이어 전력기기(4회)이 동조 흐름을 보였습니다. 연속 출현 종목: 제룡전기, PS일렉트로닉스, 오로스테크놀로지."
+  "narrative": "이번 주 주도 섹터는 **기타** (14회 등장)이며, 뒤를 이어 전력기기(5회)이 동조 흐름을 보였습니다. 연속 출현 종목: 가온전선, 제룡전기, PS일렉트로닉스."
 }

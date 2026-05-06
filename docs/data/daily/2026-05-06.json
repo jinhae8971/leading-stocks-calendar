@@ -1,0 +1,164 @@
+{
+  "date": "2026-05-06",
+  "scanned_at": "2026-05-06T09:40:42.510989",
+  "source": "naver",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "드림시큐리티",
+      "market": "KOSDAQ",
+      "close": 3755.0,
+      "change_rate": 29.93,
+      "trading_value": 341129088140,
+      "market_cap": 376200000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 99.8,
+      "signal_breakdown": {
+        "change_rate": 99.8,
+        "trading_value": 99.5,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "파워넷",
+      "market": "KOSDAQ",
+      "close": 9670.0,
+      "change_rate": 29.97,
+      "trading_value": 135319020980,
+      "market_cap": 246700000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 98.8,
+      "signal_breakdown": {
+        "change_rate": 99.9,
+        "trading_value": 96.1,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "KBI메탈",
+      "market": "KOSDAQ",
+      "close": 8610.0,
+      "change_rate": 29.86,
+      "trading_value": 137994889410,
+      "market_cap": 300600000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 98.7,
+      "signal_breakdown": {
+        "change_rate": 99.5,
+        "trading_value": 96.1,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "HB테크놀러지",
+      "market": "KOSDAQ",
+      "close": 4020.0,
+      "change_rate": 29.89,
+      "trading_value": 83102798760,
+      "market_cap": 372700000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 98.1,
+      "signal_breakdown": {
+        "change_rate": 99.6,
+        "trading_value": 94.2,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "두산퓨얼셀",
+      "market": "KOSPI",
+      "close": 78300.0,
+      "change_rate": 29.21,
+      "trading_value": 385547242500,
+      "market_cap": 5128200000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 96.5,
+      "signal_breakdown": {
+        "change_rate": 97.4,
+        "trading_value": 100.0,
+        "sector_sync": 100,
+        "turnover": 75.2
+      }
+    },
+    {
+      "ticker": "",
+      "name": "SKC",
+      "market": "KOSPI",
+      "close": 161200.0,
+      "change_rate": 30.0,
+      "trading_value": 338725530000,
+      "market_cap": 6104400000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 95.4,
+      "signal_breakdown": {
+        "change_rate": 100.0,
+        "trading_value": 99.5,
+        "sector_sync": 100,
+        "turnover": 55.5
+      }
+    },
+    {
+      "ticker": "",
+      "name": "유안타증권",
+      "market": "KOSPI",
+      "close": 7830.0,
+      "change_rate": 29.85,
+      "trading_value": 258479810100,
+      "market_cap": 1562800000000,
+      "sector": "금융지주",
+      "color": "#9E9E9E",
+      "text_color": "#FFFFFF",
+      "signal_score": 79.4,
+      "signal_breakdown": {
+        "change_rate": 99.5,
+        "trading_value": 98.5,
+        "sector_sync": 0,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "가온전선",
+      "market": "KOSPI",
+      "close": 367000.0,
+      "change_rate": 27.21,
+      "trading_value": 99354240000,
+      "market_cap": 6071300000000,
+      "sector": "전력기기",
+      "color": "#C62828",
+      "text_color": "#FFFFFF",
+      "signal_score": 66.4,
+      "signal_breakdown": {
+        "change_rate": 90.7,
+        "trading_value": 94.9,
+        "sector_sync": 0,
+        "turnover": 16.4
+      }
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}
