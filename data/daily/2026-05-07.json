@@ -1,0 +1,164 @@
+{
+  "date": "2026-05-07",
+  "scanned_at": "2026-05-07T10:00:15.671164",
+  "source": "naver",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "이랜시스",
+      "market": "KOSDAQ",
+      "close": 8120.0,
+      "change_rate": 29.92,
+      "trading_value": 159318663000,
+      "market_cap": 246000000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 97.3,
+      "signal_breakdown": {
+        "change_rate": 99.7,
+        "trading_value": 91.4,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "오이솔루션",
+      "market": "KOSDAQ",
+      "close": 54000.0,
+      "change_rate": 21.08,
+      "trading_value": 291383946000,
+      "market_cap": 668400000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 86.2,
+      "signal_breakdown": {
+        "change_rate": 70.3,
+        "trading_value": 93.6,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "대한광통신",
+      "market": "KOSDAQ",
+      "close": 21800.0,
+      "change_rate": 19.32,
+      "trading_value": 1777885636600,
+      "market_cap": 3389600000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 85.8,
+      "signal_breakdown": {
+        "change_rate": 64.4,
+        "trading_value": 100.0,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "삼성E&A",
+      "market": "KOSPI",
+      "close": 64400.0,
+      "change_rate": 21.51,
+      "trading_value": 896703410400,
+      "market_cap": 12622400000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 85.1,
+      "signal_breakdown": {
+        "change_rate": 71.7,
+        "trading_value": 97.6,
+        "sector_sync": 100,
+        "turnover": 71.0
+      }
+    },
+    {
+      "ticker": "",
+      "name": "덕산테코피아",
+      "market": "KOSDAQ",
+      "close": 31250.0,
+      "change_rate": 17.48,
+      "trading_value": 31137656250,
+      "market_cap": 639900000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 73.9,
+      "signal_breakdown": {
+        "change_rate": 58.3,
+        "trading_value": 85.7,
+        "sector_sync": 100,
+        "turnover": 48.7
+      }
+    },
+    {
+      "ticker": "",
+      "name": "GS건설",
+      "market": "KOSPI",
+      "close": 39350.0,
+      "change_rate": 11.0,
+      "trading_value": 184591597650,
+      "market_cap": 3367600000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 67.7,
+      "signal_breakdown": {
+        "change_rate": 36.7,
+        "trading_value": 92.0,
+        "sector_sync": 100,
+        "turnover": 54.8
+      }
+    },
+    {
+      "ticker": "",
+      "name": "해성디에스",
+      "market": "KOSPI",
+      "close": 86000.0,
+      "change_rate": 10.26,
+      "trading_value": 50799512000,
+      "market_cap": 1462000000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 63.4,
+      "signal_breakdown": {
+        "change_rate": 34.2,
+        "trading_value": 87.4,
+        "sector_sync": 100,
+        "turnover": 34.7
+      }
+    },
+    {
+      "ticker": "",
+      "name": "전진건설로봇",
+      "market": "KOSPI",
+      "close": 68400.0,
+      "change_rate": 9.09,
+      "trading_value": 78577851600,
+      "market_cap": 998100000000,
+      "sector": "로봇",
+      "color": "#1E88E5",
+      "text_color": "#FFFFFF",
+      "signal_score": 46.7,
+      "signal_breakdown": {
+        "change_rate": 30.3,
+        "trading_value": 88.9,
+        "sector_sync": 0,
+        "turnover": 78.7
+      }
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}
