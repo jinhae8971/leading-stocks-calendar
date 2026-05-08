@@ -6,15 +6,15 @@
     "start": "2026-05-04",
     "end": "2026-05-08"
   },
-  "generated_at": "2026-05-07T10:00:15.879248",
+  "generated_at": "2026-05-08T08:54:01.329780",
   "top_sectors": [
     {
       "sector": "기타",
-      "count": 21
+      "count": 27
     },
     {
       "sector": "전력기기",
-      "count": 5
+      "count": 6
     },
     {
       "sector": "금융지주",
@@ -22,7 +22,7 @@
     },
     {
       "sector": "바이오",
-      "count": 2
+      "count": 3
     },
     {
       "sector": "로봇",
@@ -33,8 +33,8 @@
     {
       "name": "가온전선",
       "sector": "전력기기",
-      "appearances": 3,
-      "continuity_score": 0.6
+      "appearances": 4,
+      "continuity_score": 0.8
     },
     {
       "name": "제룡전기",
@@ -279,8 +279,49 @@
     {
       "date": "2026-05-08",
       "weekday": "Fri",
-      "leaders": []
+      "leaders": [
+        {
+          "name": "현대오토에버",
+          "sector": "기타",
+          "change_rate": 29.97
+        },
+        {
+          "name": "심텍홀딩스",
+          "sector": "기타",
+          "change_rate": 21.05
+        },
+        {
+          "name": "원텍",
+          "sector": "기타",
+          "change_rate": 19.06
+        },
+        {
+          "name": "코텍",
+          "sector": "기타",
+          "change_rate": 17.35
+        },
+        {
+          "name": "현대모비스",
+          "sector": "기타",
+          "change_rate": 15.29
+        },
+        {
+          "name": "코오롱",
+          "sector": "기타",
+          "change_rate": 16.11
+        },
+        {
+          "name": "가온전선",
+          "sector": "전력기기",
+          "change_rate": 29.97
+        },
+        {
+          "name": "AP시스템",
+          "sector": "바이오",
+          "change_rate": 16.83
+        }
+      ]
     }
   ],
-  "narrative": "이번 주 주도 섹터는 **기타** (21회 등장)이며, 뒤를 이어 전력기기(5회)이 동조 흐름을 보였습니다. 연속 출현 종목: 가온전선, 제룡전기, PS일렉트로닉스."
+  "narrative": "이번 주 주도 섹터는 **기타** (27회 등장)이며, 뒤를 이어 전력기기(6회)이 동조 흐름을 보였습니다. 연속 출현 종목: 가온전선, 제룡전기, PS일렉트로닉스."
 }

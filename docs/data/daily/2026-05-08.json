@@ -1,0 +1,164 @@
+{
+  "date": "2026-05-08",
+  "scanned_at": "2026-05-08T08:54:01.099925",
+  "source": "naver",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "현대오토에버",
+      "market": "KOSPI",
+      "close": 592000.0,
+      "change_rate": 29.97,
+      "trading_value": 677400144000,
+      "market_cap": 16235000000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 93.9,
+      "signal_breakdown": {
+        "change_rate": 99.9,
+        "trading_value": 99.4,
+        "sector_sync": 100,
+        "turnover": 41.7
+      }
+    },
+    {
+      "ticker": "",
+      "name": "심텍홀딩스",
+      "market": "KOSDAQ",
+      "close": 5060.0,
+      "change_rate": 21.05,
+      "trading_value": 17453048140,
+      "market_cap": 267300000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 80.4,
+      "signal_breakdown": {
+        "change_rate": 70.2,
+        "trading_value": 86.0,
+        "sector_sync": 100,
+        "turnover": 65.3
+      }
+    },
+    {
+      "ticker": "",
+      "name": "원텍",
+      "market": "KOSDAQ",
+      "close": 8370.0,
+      "change_rate": 19.06,
+      "trading_value": 42040944810,
+      "market_cap": 749800000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 77.8,
+      "signal_breakdown": {
+        "change_rate": 63.5,
+        "trading_value": 89.2,
+        "sector_sync": 100,
+        "turnover": 56.1
+      }
+    },
+    {
+      "ticker": "",
+      "name": "코텍",
+      "market": "KOSDAQ",
+      "close": 13730.0,
+      "change_rate": 17.35,
+      "trading_value": 11997576060,
+      "market_cap": 243900000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 73.5,
+      "signal_breakdown": {
+        "change_rate": 57.8,
+        "trading_value": 84.7,
+        "sector_sync": 100,
+        "turnover": 49.2
+      }
+    },
+    {
+      "ticker": "",
+      "name": "현대모비스",
+      "market": "KOSPI",
+      "close": 509000.0,
+      "change_rate": 15.29,
+      "trading_value": 803379132000,
+      "market_cap": 46182900000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 72.1,
+      "signal_breakdown": {
+        "change_rate": 51.0,
+        "trading_value": 100.0,
+        "sector_sync": 100,
+        "turnover": 17.4
+      }
+    },
+    {
+      "ticker": "",
+      "name": "코오롱",
+      "market": "KOSPI",
+      "close": 83600.0,
+      "change_rate": 16.11,
+      "trading_value": 31814398000,
+      "market_cap": 1079100000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 70.9,
+      "signal_breakdown": {
+        "change_rate": 53.7,
+        "trading_value": 88.2,
+        "sector_sync": 100,
+        "turnover": 29.5
+      }
+    },
+    {
+      "ticker": "",
+      "name": "가온전선",
+      "market": "KOSPI",
+      "close": 477000.0,
+      "change_rate": 29.97,
+      "trading_value": 147794157000,
+      "market_cap": 7891100000000,
+      "sector": "전력기기",
+      "color": "#C62828",
+      "text_color": "#FFFFFF",
+      "signal_score": 70.0,
+      "signal_breakdown": {
+        "change_rate": 99.9,
+        "trading_value": 93.8,
+        "sector_sync": 0,
+        "turnover": 18.7
+      }
+    },
+    {
+      "ticker": "",
+      "name": "AP시스템",
+      "market": "KOSDAQ",
+      "close": 30200.0,
+      "change_rate": 16.83,
+      "trading_value": 36810900800,
+      "market_cap": 454500000000,
+      "sector": "바이오",
+      "color": "#EC407A",
+      "text_color": "#FFFFFF",
+      "signal_score": 57.2,
+      "signal_breakdown": {
+        "change_rate": 56.1,
+        "trading_value": 88.8,
+        "sector_sync": 0,
+        "turnover": 81.0
+      }
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}
