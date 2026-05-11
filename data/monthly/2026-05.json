@@ -2,7 +2,7 @@
   "year": 2026,
   "month": 5,
   "title": "5월 주도주 캘린더",
-  "generated_at": "2026-05-08T08:54:01.276125",
+  "generated_at": "2026-05-11T10:47:35.304820",
   "weeks": [
     {
       "week_index": 1,
@@ -1020,8 +1020,161 @@
           "day": 11,
           "in_month": true,
           "is_business_day": true,
-          "leaders": [],
-          "empty_label": "주도주없음"
+          "leaders": [
+            {
+              "ticker": "",
+              "name": "미래반도체",
+              "market": "KOSDAQ",
+              "close": 40100.0,
+              "change_rate": 29.98,
+              "trading_value": 109581109600,
+              "market_cap": 579000000000,
+              "sector": "반도체",
+              "color": "#E53935",
+              "text_color": "#FFFFFF",
+              "signal_score": 90.1,
+              "signal_breakdown": {
+                "change_rate": 99.9,
+                "trading_value": 89.3,
+                "sector_sync": 66.7,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "대한광통신",
+              "market": "KOSDAQ",
+              "close": 27950.0,
+              "change_rate": 25.06,
+              "trading_value": 2334942468950,
+              "market_cap": 4345800000000,
+              "sector": "기타",
+              "color": "#FFEB3B",
+              "text_color": "#000000",
+              "signal_score": 86.7,
+              "signal_breakdown": {
+                "change_rate": 83.5,
+                "trading_value": 100.0,
+                "sector_sync": 66.7,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "에스비비테크",
+              "market": "KOSDAQ",
+              "close": 90000.0,
+              "change_rate": 25.7,
+              "trading_value": 147969450000,
+              "market_cap": 599000000000,
+              "sector": "기타",
+              "color": "#FFEB3B",
+              "text_color": "#000000",
+              "signal_score": 84.7,
+              "signal_breakdown": {
+                "change_rate": 85.7,
+                "trading_value": 90.3,
+                "sector_sync": 66.7,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "코스모로보틱스",
+              "market": "KOSDAQ",
+              "close": 24000.0,
+              "change_rate": 300.0,
+              "trading_value": 986781408000,
+              "market_cap": 770600000000,
+              "sector": "로봇",
+              "color": "#1E88E5",
+              "text_color": "#FFFFFF",
+              "signal_score": 79.1,
+              "signal_breakdown": {
+                "change_rate": 100.0,
+                "trading_value": 97.0,
+                "sector_sync": 0,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "한온시스템",
+              "market": "KOSPI",
+              "close": 5730.0,
+              "change_rate": 20.13,
+              "trading_value": 870655565100,
+              "market_cap": 5880500000000,
+              "sector": "기타",
+              "color": "#FFEB3B",
+              "text_color": "#000000",
+              "signal_score": 79.1,
+              "signal_breakdown": {
+                "change_rate": 67.1,
+                "trading_value": 96.5,
+                "sector_sync": 66.7,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "KODEX 반도체레버리지",
+              "market": "KOSPI",
+              "close": 151660.0,
+              "change_rate": 12.8,
+              "trading_value": 795969462460,
+              "market_cap": 2684400000000,
+              "sector": "반도체",
+              "color": "#E53935",
+              "text_color": "#FFFFFF",
+              "signal_score": 69.3,
+              "signal_breakdown": {
+                "change_rate": 42.7,
+                "trading_value": 96.2,
+                "sector_sync": 66.7,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "TIGER 반도체TOP10레버리지",
+              "market": "KOSPI",
+              "close": 88325.0,
+              "change_rate": 13.04,
+              "trading_value": 477017092475,
+              "market_cap": 2464300000000,
+              "sector": "반도체",
+              "color": "#E53935",
+              "text_color": "#FFFFFF",
+              "signal_score": 69.0,
+              "signal_breakdown": {
+                "change_rate": 43.5,
+                "trading_value": 94.4,
+                "sector_sync": 66.7,
+                "turnover": 100
+              }
+            },
+            {
+              "ticker": "",
+              "name": "광전자",
+              "market": "KOSPI",
+              "close": 13200.0,
+              "change_rate": 17.75,
+              "trading_value": 287299306800,
+              "market_cap": 764900000000,
+              "sector": "전력기기",
+              "color": "#C62828",
+              "text_color": "#FFFFFF",
+              "signal_score": 61.5,
+              "signal_breakdown": {
+                "change_rate": 59.2,
+                "trading_value": 92.6,
+                "sector_sync": 0,
+                "turnover": 100
+              }
+            }
+          ],
+          "empty_label": null
         },
         {
           "date": "2026-05-12",
@@ -1209,7 +1362,24 @@
     },
     {
       "week_index": 3,
-      "ranking": []
+      "ranking": [
+        {
+          "sector": "반도체",
+          "count": 3
+        },
+        {
+          "sector": "기타",
+          "count": 3
+        },
+        {
+          "sector": "로봇",
+          "count": 1
+        },
+        {
+          "sector": "전력기기",
+          "count": 1
+        }
+      ]
     },
     {
       "week_index": 4,
@@ -1223,30 +1393,30 @@
   "monthly_sector_counts": [
     {
       "sector": "기타",
-      "count": 28
+      "count": 31
     },
     {
       "sector": "전력기기",
-      "count": 8
+      "count": 9
     },
     {
       "sector": "바이오",
       "count": 4
     },
     {
+      "sector": "반도체",
+      "count": 4
+    },
+    {
+      "sector": "로봇",
+      "count": 3
+    },
+    {
       "sector": "금융지주",
       "count": 3
     },
     {
-      "sector": "로봇",
-      "count": 2
-    },
-    {
       "sector": "화학·소재",
-      "count": 1
-    },
-    {
-      "sector": "반도체",
       "count": 1
     },
     {

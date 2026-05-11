@@ -1,0 +1,147 @@
+{
+  "year": 2026,
+  "week": 20,
+  "iso_label": "2026-W20",
+  "date_range": {
+    "start": "2026-05-11",
+    "end": "2026-05-15"
+  },
+  "generated_at": "2026-05-11T10:47:35.354365",
+  "top_sectors": [
+    {
+      "sector": "반도체",
+      "count": 3
+    },
+    {
+      "sector": "기타",
+      "count": 3
+    },
+    {
+      "sector": "로봇",
+      "count": 1
+    },
+    {
+      "sector": "전력기기",
+      "count": 1
+    }
+  ],
+  "top_stocks": [
+    {
+      "name": "미래반도체",
+      "sector": "반도체",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "대한광통신",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "에스비비테크",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "코스모로보틱스",
+      "sector": "로봇",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "한온시스템",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "KODEX 반도체레버리지",
+      "sector": "반도체",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "TIGER 반도체TOP10레버리지",
+      "sector": "반도체",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "광전자",
+      "sector": "전력기기",
+      "appearances": 1,
+      "continuity_score": 0.2
+    }
+  ],
+  "daily_breakdown": [
+    {
+      "date": "2026-05-11",
+      "weekday": "Mon",
+      "leaders": [
+        {
+          "name": "미래반도체",
+          "sector": "반도체",
+          "change_rate": 29.98
+        },
+        {
+          "name": "대한광통신",
+          "sector": "기타",
+          "change_rate": 25.06
+        },
+        {
+          "name": "에스비비테크",
+          "sector": "기타",
+          "change_rate": 25.7
+        },
+        {
+          "name": "코스모로보틱스",
+          "sector": "로봇",
+          "change_rate": 300.0
+        },
+        {
+          "name": "한온시스템",
+          "sector": "기타",
+          "change_rate": 20.13
+        },
+        {
+          "name": "KODEX 반도체레버리지",
+          "sector": "반도체",
+          "change_rate": 12.8
+        },
+        {
+          "name": "TIGER 반도체TOP10레버리지",
+          "sector": "반도체",
+          "change_rate": 13.04
+        },
+        {
+          "name": "광전자",
+          "sector": "전력기기",
+          "change_rate": 17.75
+        }
+      ]
+    },
+    {
+      "date": "2026-05-12",
+      "weekday": "Tue",
+      "leaders": []
+    },
+    {
+      "date": "2026-05-13",
+      "weekday": "Wed",
+      "leaders": []
+    },
+    {
+      "date": "2026-05-14",
+      "weekday": "Thu",
+      "leaders": []
+    },
+    {
+      "date": "2026-05-15",
+      "weekday": "Fri",
+      "leaders": []
+    }
+  ],
+  "narrative": "이번 주 주도 섹터는 **반도체** (3회 등장)이며, 뒤를 이어 기타(3회)이 동조 흐름을 보였습니다."
+}
