@@ -6,26 +6,38 @@
     "start": "2026-05-11",
     "end": "2026-05-15"
   },
-  "generated_at": "2026-05-11T10:47:35.354365",
+  "generated_at": "2026-05-12T10:04:14.504571",
   "top_sectors": [
+    {
+      "sector": "기타",
+      "count": 9
+    },
     {
       "sector": "반도체",
       "count": 3
     },
     {
-      "sector": "기타",
-      "count": 3
-    },
-    {
       "sector": "로봇",
-      "count": 1
+      "count": 2
     },
     {
       "sector": "전력기기",
-      "count": 1
+      "count": 2
     }
   ],
   "top_stocks": [
+    {
+      "name": "에스비비테크",
+      "sector": "기타",
+      "appearances": 2,
+      "continuity_score": 0.4
+    },
+    {
+      "name": "코스모로보틱스",
+      "sector": "로봇",
+      "appearances": 2,
+      "continuity_score": 0.4
+    },
     {
       "name": "미래반도체",
       "sector": "반도체",
@@ -35,18 +47,6 @@
     {
       "name": "대한광통신",
       "sector": "기타",
-      "appearances": 1,
-      "continuity_score": 0.2
-    },
-    {
-      "name": "에스비비테크",
-      "sector": "기타",
-      "appearances": 1,
-      "continuity_score": 0.2
-    },
-    {
-      "name": "코스모로보틱스",
-      "sector": "로봇",
       "appearances": 1,
       "continuity_score": 0.2
     },
@@ -71,6 +71,18 @@
     {
       "name": "광전자",
       "sector": "전력기기",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "모베이스전자",
+      "sector": "기타",
+      "appearances": 1,
+      "continuity_score": 0.2
+    },
+    {
+      "name": "LG전자",
+      "sector": "기타",
       "appearances": 1,
       "continuity_score": 0.2
     }
@@ -125,7 +137,48 @@
     {
       "date": "2026-05-12",
       "weekday": "Tue",
-      "leaders": []
+      "leaders": [
+        {
+          "name": "모베이스전자",
+          "sector": "기타",
+          "change_rate": 29.96
+        },
+        {
+          "name": "LG전자",
+          "sector": "기타",
+          "change_rate": 18.0
+        },
+        {
+          "name": "코스모로보틱스",
+          "sector": "로봇",
+          "change_rate": 30.0
+        },
+        {
+          "name": "에스비비테크",
+          "sector": "기타",
+          "change_rate": 14.78
+        },
+        {
+          "name": "뉴파워프라즈마",
+          "sector": "기타",
+          "change_rate": 15.48
+        },
+        {
+          "name": "달바글로벌",
+          "sector": "기타",
+          "change_rate": 13.04
+        },
+        {
+          "name": "LG전자우",
+          "sector": "기타",
+          "change_rate": 10.51
+        },
+        {
+          "name": "가온전선",
+          "sector": "전력기기",
+          "change_rate": 18.24
+        }
+      ]
     },
     {
       "date": "2026-05-13",
@@ -143,5 +196,5 @@
       "leaders": []
     }
   ],
-  "narrative": "이번 주 주도 섹터는 **반도체** (3회 등장)이며, 뒤를 이어 기타(3회)이 동조 흐름을 보였습니다."
+  "narrative": "이번 주 주도 섹터는 **기타** (9회 등장)이며, 뒤를 이어 반도체(3회)이 동조 흐름을 보였습니다. 연속 출현 종목: 에스비비테크, 코스모로보틱스."
 }
