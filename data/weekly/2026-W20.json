@@ -6,11 +6,11 @@
     "start": "2026-05-11",
     "end": "2026-05-15"
   },
-  "generated_at": "2026-05-12T10:04:14.504571",
+  "generated_at": "2026-05-13T10:02:52.245567",
   "top_sectors": [
     {
       "sector": "기타",
-      "count": 9
+      "count": 16
     },
     {
       "sector": "반도체",
@@ -18,7 +18,7 @@
     },
     {
       "sector": "로봇",
-      "count": 2
+      "count": 3
     },
     {
       "sector": "전력기기",
@@ -27,14 +27,20 @@
   ],
   "top_stocks": [
     {
+      "name": "코스모로보틱스",
+      "sector": "로봇",
+      "appearances": 3,
+      "continuity_score": 0.6
+    },
+    {
       "name": "에스비비테크",
       "sector": "기타",
       "appearances": 2,
       "continuity_score": 0.4
     },
     {
-      "name": "코스모로보틱스",
-      "sector": "로봇",
+      "name": "뉴파워프라즈마",
+      "sector": "기타",
       "appearances": 2,
       "continuity_score": 0.4
     },
@@ -76,12 +82,6 @@
     },
     {
       "name": "모베이스전자",
-      "sector": "기타",
-      "appearances": 1,
-      "continuity_score": 0.2
-    },
-    {
-      "name": "LG전자",
       "sector": "기타",
       "appearances": 1,
       "continuity_score": 0.2
@@ -183,7 +183,48 @@
     {
       "date": "2026-05-13",
       "weekday": "Wed",
-      "leaders": []
+      "leaders": [
+        {
+          "name": "한화갤러리아",
+          "sector": "기타",
+          "change_rate": 30.0
+        },
+        {
+          "name": "뉴파워프라즈마",
+          "sector": "기타",
+          "change_rate": 29.95
+        },
+        {
+          "name": "저스템",
+          "sector": "기타",
+          "change_rate": 30.0
+        },
+        {
+          "name": "코미코",
+          "sector": "기타",
+          "change_rate": 29.95
+        },
+        {
+          "name": "코스모로보틱스",
+          "sector": "로봇",
+          "change_rate": 29.97
+        },
+        {
+          "name": "현대모비스",
+          "sector": "기타",
+          "change_rate": 18.43
+        },
+        {
+          "name": "녹십자홀딩스",
+          "sector": "기타",
+          "change_rate": 14.39
+        },
+        {
+          "name": "아이에스동서",
+          "sector": "기타",
+          "change_rate": 13.72
+        }
+      ]
     },
     {
       "date": "2026-05-14",
@@ -196,5 +237,5 @@
       "leaders": []
     }
   ],
-  "narrative": "이번 주 주도 섹터는 **기타** (9회 등장)이며, 뒤를 이어 반도체(3회)이 동조 흐름을 보였습니다. 연속 출현 종목: 에스비비테크, 코스모로보틱스."
+  "narrative": "이번 주 주도 섹터는 **기타** (16회 등장)이며, 뒤를 이어 반도체(3회)이 동조 흐름을 보였습니다. 연속 출현 종목: 코스모로보틱스, 에스비비테크, 뉴파워프라즈마."
 }

@@ -1,0 +1,164 @@
+{
+  "date": "2026-05-13",
+  "scanned_at": "2026-05-13T10:02:52.016313",
+  "source": "naver",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "한화갤러리아",
+      "market": "KOSPI",
+      "close": 3640.0,
+      "change_rate": 30.0,
+      "trading_value": 179723314680,
+      "market_cap": 705600000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 98.0,
+      "signal_breakdown": {
+        "change_rate": 100.0,
+        "trading_value": 93.4,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "뉴파워프라즈마",
+      "market": "KOSDAQ",
+      "close": 11150.0,
+      "change_rate": 29.95,
+      "trading_value": 107681158450,
+      "market_cap": 487200000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 97.4,
+      "signal_breakdown": {
+        "change_rate": 99.8,
+        "trading_value": 91.5,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "저스템",
+      "market": "KOSDAQ",
+      "close": 17030.0,
+      "change_rate": 30.0,
+      "trading_value": 77032446140,
+      "market_cap": 386000000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 97.1,
+      "signal_breakdown": {
+        "change_rate": 100.0,
+        "trading_value": 90.3,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "코미코",
+      "market": "KOSDAQ",
+      "close": 187000.0,
+      "change_rate": 29.95,
+      "trading_value": 107378766000,
+      "market_cap": 1956100000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 92.9,
+      "signal_breakdown": {
+        "change_rate": 99.8,
+        "trading_value": 91.5,
+        "sector_sync": 100,
+        "turnover": 54.9
+      }
+    },
+    {
+      "ticker": "",
+      "name": "코스모로보틱스",
+      "market": "KOSDAQ",
+      "close": 40550.0,
+      "change_rate": 29.97,
+      "trading_value": 417504016500,
+      "market_cap": 1302000000000,
+      "sector": "로봇",
+      "color": "#1E88E5",
+      "text_color": "#FFFFFF",
+      "signal_score": 78.9,
+      "signal_breakdown": {
+        "change_rate": 99.9,
+        "trading_value": 96.4,
+        "sector_sync": 0,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "현대모비스",
+      "market": "KOSPI",
+      "close": 649000.0,
+      "change_rate": 18.43,
+      "trading_value": 1135207436000,
+      "market_cap": 58885400000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 76.5,
+      "signal_breakdown": {
+        "change_rate": 61.4,
+        "trading_value": 100.0,
+        "sector_sync": 100,
+        "turnover": 19.3
+      }
+    },
+    {
+      "ticker": "",
+      "name": "녹십자홀딩스",
+      "market": "KOSPI",
+      "close": 16380.0,
+      "change_rate": 14.39,
+      "trading_value": 43252962480,
+      "market_cap": 770300000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 71.3,
+      "signal_breakdown": {
+        "change_rate": 48.0,
+        "trading_value": 88.2,
+        "sector_sync": 100,
+        "turnover": 56.2
+      }
+    },
+    {
+      "ticker": "",
+      "name": "아이에스동서",
+      "market": "KOSPI",
+      "close": 27350.0,
+      "change_rate": 13.72,
+      "trading_value": 17981831850,
+      "market_cap": 825600000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 66.0,
+      "signal_breakdown": {
+        "change_rate": 45.7,
+        "trading_value": 85.1,
+        "sector_sync": 100,
+        "turnover": 21.8
+      }
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}
