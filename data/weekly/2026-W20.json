@@ -6,31 +6,35 @@
     "start": "2026-05-11",
     "end": "2026-05-15"
   },
-  "generated_at": "2026-05-13T10:02:52.245567",
+  "generated_at": "2026-05-14T09:44:29.502214",
   "top_sectors": [
     {
       "sector": "기타",
-      "count": 16
+      "count": 21
     },
     {
       "sector": "반도체",
-      "count": 3
+      "count": 4
     },
     {
       "sector": "로봇",
-      "count": 3
+      "count": 4
     },
     {
       "sector": "전력기기",
       "count": 2
+    },
+    {
+      "sector": "화학·소재",
+      "count": 1
     }
   ],
   "top_stocks": [
     {
       "name": "코스모로보틱스",
       "sector": "로봇",
-      "appearances": 3,
-      "continuity_score": 0.6
+      "appearances": 4,
+      "continuity_score": 0.8
     },
     {
       "name": "에스비비테크",
@@ -229,7 +233,48 @@
     {
       "date": "2026-05-14",
       "weekday": "Thu",
-      "leaders": []
+      "leaders": [
+        {
+          "name": "폴레드",
+          "sector": "기타",
+          "change_rate": 300.0
+        },
+        {
+          "name": "라온텍",
+          "sector": "기타",
+          "change_rate": 29.95
+        },
+        {
+          "name": "비에이치",
+          "sector": "기타",
+          "change_rate": 24.38
+        },
+        {
+          "name": "LG씨엔에스",
+          "sector": "기타",
+          "change_rate": 17.14
+        },
+        {
+          "name": "코스모로보틱스",
+          "sector": "로봇",
+          "change_rate": 29.96
+        },
+        {
+          "name": "삼아알미늄",
+          "sector": "기타",
+          "change_rate": 18.74
+        },
+        {
+          "name": "제주반도체",
+          "sector": "반도체",
+          "change_rate": 28.35
+        },
+        {
+          "name": "SK네트웍스",
+          "sector": "화학·소재",
+          "change_rate": 29.93
+        }
+      ]
     },
     {
       "date": "2026-05-15",
@@ -237,5 +282,5 @@
       "leaders": []
     }
   ],
-  "narrative": "이번 주 주도 섹터는 **기타** (16회 등장)이며, 뒤를 이어 반도체(3회)이 동조 흐름을 보였습니다. 연속 출현 종목: 코스모로보틱스, 에스비비테크, 뉴파워프라즈마."
+  "narrative": "이번 주 주도 섹터는 **기타** (21회 등장)이며, 뒤를 이어 반도체(4회)이 동조 흐름을 보였습니다. 연속 출현 종목: 코스모로보틱스, 에스비비테크, 뉴파워프라즈마."
 }
