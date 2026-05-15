@@ -1,0 +1,164 @@
+{
+  "date": "2026-05-15",
+  "scanned_at": "2026-05-15T10:02:23.492378",
+  "source": "naver",
+  "leaders": [
+    {
+      "ticker": "",
+      "name": "삼지전자",
+      "market": "KOSDAQ",
+      "close": 49650.0,
+      "change_rate": 29.97,
+      "trading_value": 82748973900,
+      "market_cap": 810200000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 97.2,
+      "signal_breakdown": {
+        "change_rate": 99.9,
+        "trading_value": 90.7,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "소룩스",
+      "market": "KOSDAQ",
+      "close": 5570.0,
+      "change_rate": 29.84,
+      "trading_value": 58060337630,
+      "market_cap": 274800000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 96.6,
+      "signal_breakdown": {
+        "change_rate": 99.5,
+        "trading_value": 89.5,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "에스에이엠티",
+      "market": "KOSDAQ",
+      "close": 14300.0,
+      "change_rate": 30.0,
+      "trading_value": 93516594600,
+      "market_cap": 1429900000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 93.9,
+      "signal_breakdown": {
+        "change_rate": 100.0,
+        "trading_value": 91.2,
+        "sector_sync": 100,
+        "turnover": 65.4
+      }
+    },
+    {
+      "ticker": "",
+      "name": "한선엔지니어링",
+      "market": "KOSDAQ",
+      "close": 28900.0,
+      "change_rate": 19.18,
+      "trading_value": 63402871900,
+      "market_cap": 556200000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 82.5,
+      "signal_breakdown": {
+        "change_rate": 63.9,
+        "trading_value": 89.8,
+        "sector_sync": 100,
+        "turnover": 100
+      }
+    },
+    {
+      "ticker": "",
+      "name": "한국쉘석유",
+      "market": "KOSPI",
+      "close": 580000.0,
+      "change_rate": 20.08,
+      "trading_value": 39915600000,
+      "market_cap": 754000000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 78.5,
+      "signal_breakdown": {
+        "change_rate": 66.9,
+        "trading_value": 88.1,
+        "sector_sync": 100,
+        "turnover": 52.9
+      }
+    },
+    {
+      "ticker": "",
+      "name": "자화전자",
+      "market": "KOSPI",
+      "close": 55700.0,
+      "change_rate": 16.53,
+      "trading_value": 83380672000,
+      "market_cap": 1203400000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 76.2,
+      "signal_breakdown": {
+        "change_rate": 55.1,
+        "trading_value": 90.8,
+        "sector_sync": 100,
+        "turnover": 69.3
+      }
+    },
+    {
+      "ticker": "",
+      "name": "오리온홀딩스",
+      "market": "KOSPI",
+      "close": 28300.0,
+      "change_rate": 14.11,
+      "trading_value": 48502124800,
+      "market_cap": 1772900000000,
+      "sector": "기타",
+      "color": "#FFEB3B",
+      "text_color": "#000000",
+      "signal_score": 68.2,
+      "signal_breakdown": {
+        "change_rate": 47.0,
+        "trading_value": 88.8,
+        "sector_sync": 100,
+        "turnover": 27.4
+      }
+    },
+    {
+      "ticker": "",
+      "name": "두산로보틱스",
+      "market": "KOSPI",
+      "close": 127400.0,
+      "change_rate": 19.29,
+      "trading_value": 1074990371000,
+      "market_cap": 8258100000000,
+      "sector": "로봇",
+      "color": "#1E88E5",
+      "text_color": "#FFFFFF",
+      "signal_score": 65.7,
+      "signal_breakdown": {
+        "change_rate": 64.3,
+        "trading_value": 100.0,
+        "sector_sync": 0,
+        "turnover": 100
+      }
+    }
+  ],
+  "params": {
+    "top_n_per_market": 4,
+    "min_trading_value_krw": 10000000000,
+    "market_cap_rank_limit": 500
+  }
+}
